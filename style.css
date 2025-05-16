@@ -1,0 +1,151 @@
+/* https://www.pelicanocoffee.com/*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Georgia', serif;
+  background-color: #f7f4ef;
+  color: #2d2d2d;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #1d1d1b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 60px;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-family: 'Brush Script MT', cursive;
+  font-size: 40px;
+  font-weight: bold;
+  color: #f5deb3;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 30px;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+  color: #f5deb3;
+  border-bottom: 2px solid #f5deb3;
+  padding-bottom: 4px;
+}
+
+.background-container {
+  background-image: url("fotos/sabores da terra.png");
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  text-align: center;
+  color: white;
+  padding: 0 20px;
+  max-width: 800px;
+}
+
+.content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.content p {
+  font-size: 1.25rem;
+  max-width: 700px;
+  margin: 0 auto;
+  color: #f0e6d2;
+}
+
+.sobre-container {
+  max-width: 1200px;
+  margin: 80px auto;
+  background-color: white;
+  padding: 60px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.content-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  align-items: center;
+}
+
+.texto {
+  flex: 1 1 500px;
+  color: #2b2b2b;
+}
+
+.texto h2 {
+  font-size: 2.75rem;
+  margin-bottom: 20px;
+  color: #1d1d1b;
+  font-weight: bold;
+}
+
+.texto p,
+.texto .info-box p {
+  font-size: 1.1rem;
+  color: #4a4a4a;
+  margin-bottom: 15px;
+}
+
+.info-box {
+  margin-top: 20px;
+}
+
+.info-box h3 {
+  font-size: 1.3rem;
+  margin-bottom: 6px;
+  color: #a0522d;
+  font-weight: bold;
+}
+
+.imagem {
+  flex: 1 1 400px;
+  text-align: center;
+}
+
+.imagem img {
+  max-width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.logo-img {
+  height: 50px; /* ou outro valor adequado */
+  width: auto;
+  margin-right: -25%;
+}
