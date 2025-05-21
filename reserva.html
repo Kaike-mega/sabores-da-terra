@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Reserva - Sabores da Terra</title>
+    <link rel="stylesheet" href="reserva.css" />
+</head>
+
+<body>
+
+    <header>
+        <img src="fotos/logo branca.png" alt="logo" class="logo-img">
+        <div class="logo">Sabores da Terra</div>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="cardapio.html">Cardápio</a>
+            <a href="reserva.html" class="active">Reservas</a>
+        </nav>
+    </header>
+
+    <div class="overlay">
+        <div class="container">
+            <h1>Reserva - Sabores da Terra</h1>
+            <form id="reservationForm">
+                <label for="nomeCompleto">Nome Completo:</label>
+                <input type="text" id="nomeCompleto" name="nomeCompleto" required />
+
+                <label for="telefone">Número de Telefone:</label>
+                <input type="tel" id="telefone" name="telefone" required pattern="[0-9\s()+-]{8,}"
+                    placeholder="(xx) xxxx-xxxx" />
+
+                <label for="quantidadePessoas">Quantidade de Pessoas:</label>
+                <input type="number" id="quantidadePessoas" name="quantidadePessoas" min="1" max="15" value="1"
+                    required />
+
+                <label for="dataReserva">Data (Terça a Domingo):</label>
+                <input type="date" id="dataReserva" name="dataReserva" required />
+
+                <label for="horario">Horário: <span id="horarioValor">11:00</span></label>
+                <input type="range" id="horario" name="horario" min="11" max="21" value="11" step="1" />
+
+                <button type="submit">Reservar</button>
+            </form>
+        </div>
+
+        <script>
+            // Atualiza o texto do horário conforme o slider
+            const horarioInput = document.getElementById('horario');
+            const horarioValor = document.getElementById('horarioValor');
+
+            function formatHour(hour) {
+                return hour.toString().padStart(2, '0') + ':00';
+            }
+
+            horarioInput.addEventListener('input', () => {
+                horarioValor.textContent = formatHour(horarioInput.value);
+            });
+
+            // Validação da data (só aceita terça a domingo)
+            const dataInput = document.getElementById('dataReserva');
+
+            dataInput.addEventListener('change', () => {
+                const data = new Date(dataInput.value);
+                const diaSemana = data.getDay(); // 0 = Domingo, 1 = Segunda ... 6 = Sábado
+                if (diaSemana === 1) {
+                    alert('Reservas não são aceitas às segundas-feiras.');
+                    dataInput.value = '';
+                }
+            });
+        </script>
+<br>
+</div>
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>&copy; 2025 Sabores da Terra. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
